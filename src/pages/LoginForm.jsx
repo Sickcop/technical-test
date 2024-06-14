@@ -12,14 +12,9 @@ const LoginForm = ({ onSubmit }) => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit({ username, password });
-  };
-
+  
   return (
-    <FormContainer onSubmit={handleSubmit}>
+    <FormContainer >
       <FormGroup>
         <label htmlFor="username">Usuario o Email:</label>
         <input
