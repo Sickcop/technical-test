@@ -1,4 +1,4 @@
-![](https://github.com/Sickcop/technical-test/blob/master/screenshots/Screenshot%202024-06-14%20125344.png)
+![](https://github.com/Sickcop/technical-test/blob/master/screenshots/Screenshot%202024-06-14%20124533.png)
 
 ![](https://github.com/Sickcop/technical-test/blob/master/screenshots/Screenshot%202024-06-14%20125327.png)
 
@@ -7,6 +7,8 @@
 ![](https://github.dev/Sickcop/technical-test/blob/master/screenshots/Screenshot%202024-06-14%20124533.png)
 
 ![](https://github.com/Sickcop/technical-test/blob/master/screenshots/Screenshot%202024-06-14%20125223.png)
+
+![](https://github.com/Sickcop/technical-test/blob/master/screenshots/Screenshot%202024-06-14%20125344.png)
 Event Finder App
 
 (Advertencia: recargar la pagina por segunda vez en caso de que el modal no retorne informacion de la api)
