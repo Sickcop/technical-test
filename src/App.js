@@ -104,16 +104,18 @@ const App = () => {
       <GlobalStyle />
       <div className="App">
         <NavBar toggleTheme={toggleTheme} />
-        <SearchContainer>
-          <SearchForm>
-            <SearchInput 
-              type="text" 
-              placeholder="Buscar evento..." 
-              value={searchTerm} 
-              onChange={handleSearchChange} 
-            />
-          </SearchForm>
-        </SearchContainer>
+        {location.pathname === '/' && (
+          <SearchContainer>
+            <SearchForm>
+              <SearchInput 
+                type="text" 
+                placeholder="Buscar evento..." 
+                value={searchTerm} 
+                onChange={handleSearchChange} 
+              />
+            </SearchForm>
+          </SearchContainer>
+        )}
         <Routes>
           <Route 
             path='/' 

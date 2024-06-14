@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const LoginForm = ({ onSubmit }) => {
+const LoginForm = () => {
 
   
   return (
