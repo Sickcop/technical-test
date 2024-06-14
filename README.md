@@ -24,6 +24,7 @@ Eventbrite API: API utilizada para obtener información sobre eventos.
 Notas de diseño y arquitectura
 Consumo de API por id: Fue necesario acceder a los ids de la API de manera manual por medio de un array debio a que la api ya no maneja end points publicos con varios eventos y no se puede acceder al id de una empresa a no ser que se tenga el token de la empresa. puede revisar el changelog: ttps://www.eventbrite.com/platform/docs/changelog
 
+
 Instalación
 
 Requisitos Previos
