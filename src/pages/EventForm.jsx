@@ -1,22 +1,10 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const EventForm = ({ onSubmit }) => {
-  const [eventData, setEventData] = useState({
-    title: '',
-    date: '',
-    location: '',
-    description: '',
-    imageUrl: ''
-  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(eventData);
-  };
 
   return (
-    <FormContainer onSubmit={handleSubmit}>
+    <FormContainer onSubmit={''}>
       <FormGroup>
         <label htmlFor="title">Título del evento:</label>
         <input
@@ -65,7 +53,7 @@ const EventForm = ({ onSubmit }) => {
 
 const FormContainer = styled.form`
   max-width: 600px;
-  margin: 0 auto;
+  margin: 3rem auto;
   padding: 20px;
   border-radius: 8px;
   background: #2a2a2a;

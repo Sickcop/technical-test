@@ -49,7 +49,7 @@ const LoginForm = ({ onSubmit }) => {
 
 const FormContainer = styled.form`
   max-width: 400px;
-  margin: 0 auto;
+  margin: 3rem auto;
   padding: 20px;
   border-radius: 8px;
   background: #2a2a2a;

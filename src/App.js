@@ -29,6 +29,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.color};
     transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
   }
 `;
 
