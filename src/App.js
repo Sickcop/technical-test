@@ -1,14 +1,13 @@
+// App.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-
 import NavBar from './components/Navbar.jsx';
 import EventCard from './components/EventCards';
 import LoginForm from './pages/LoginForm.jsx';
 import EventForm from './pages/EventForm.jsx';
 
-// Temas para modo diurno y nocturno
 const lightTheme = {
   background: '#fff',
   color: '#000',
@@ -16,7 +15,13 @@ const lightTheme = {
   cardColor: '#fff',
 };
 
-// Estilos globales
+const darkTheme = {
+  background: '#333',
+  color: '#fff',
+  cardBackground: '#1a1a1a',
+  cardColor: '#fff',
+};
+
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.background};
@@ -39,7 +44,7 @@ const App = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [theme] = useState(lightTheme);
+  const [theme, setTheme] = useState(lightTheme);
   const [searchTerm, setSearchTerm] = useState('');
   const eventContainerRef = useRef(null);
   const location = useLocation();
@@ -74,6 +79,10 @@ const App = () => {
     }
   };
 
+  const toggleTheme = () => {
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  };
+
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -94,7 +103,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <div className="App">
-        <NavBar />
+        <NavBar toggleTheme={toggleTheme} />
         <SearchContainer>
           <SearchForm>
             <SearchInput 
@@ -152,7 +161,7 @@ const SearchContainer = styled.div`
 `;
 
 const SearchForm = styled.form`
-  width: 80%; /* Ancho del formulario */
+  width: 80%;
 `;
 
 const SearchInput = styled.input`

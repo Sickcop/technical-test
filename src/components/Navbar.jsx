@@ -75,7 +75,7 @@ const Logo = styled.div`
   font-weight: bold;
   color: #ff6584;
   margin-left: 1.5rem;
-`;
+`; 
 
 const NavLinks = styled.div`
   display: flex;

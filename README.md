@@ -1,5 +1,7 @@
 Event Finder App
 
+(Advertencia: recargar la pagina por segunda vez en caso de que el modal no retorne informacion de la api)
+
 Descripción
 Event Finder App es una aplicación web que permite a los usuarios buscar y ver eventos de Eventbrite. La aplicación ofrece una interfaz intuitiva y atractiva, con la capacidad de cambiar entre modo diurno y nocturno para una mejor experiencia de usuario.
 

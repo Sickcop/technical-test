@@ -101,7 +101,7 @@ const Modal = styled.div`
 `;
 
 const ModalContent = styled.div`
-  background: #fff;
+  background: #fff; 
   padding: 2rem;
   border-radius: 10px;
 `;
