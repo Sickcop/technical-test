@@ -39,4 +39,8 @@ Requisitos Previos
 Node.js (v12 o superior)
 npm (v6 o superior)
 
+
+Ejecuta en tu CMD 
+
 npm install
+npm start
