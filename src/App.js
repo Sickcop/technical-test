@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import axios from 'axios';
@@ -6,7 +5,8 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import NavBar from './components/Navbar.jsx';
 import EventCard from './components/EventCards';
 import LoginForm from './pages/LoginForm.jsx';
-import EventForm from './pages/EventForm.jsx';
+import EventCRUD from './pages/EventCRUD.jsx'; 
+import LoadingSpinner from './components/LoadingSpinner';
 
 const lightTheme = {
   background: '#fff',
@@ -92,7 +92,7 @@ const App = () => {
   );
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingSpinner />;
   }
 
   if (error) {
@@ -131,7 +131,7 @@ const App = () => {
             } 
           />
           <Route path='/Login' element={<LoginForm />} />
-          <Route path='/Create' element={<EventForm />} />
+          <Route path='/ManageEvents' element={<EventCRUD />} />
         </Routes>
         {location.pathname === '/' && (
           <>

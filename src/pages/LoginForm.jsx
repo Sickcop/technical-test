@@ -1,17 +1,7 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const LoginForm = ({ onSubmit }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
   
   return (
     <FormContainer >
@@ -21,9 +11,6 @@ const LoginForm = ({ onSubmit }) => {
           type="text"
           id="username"
           name="username"
-          value={username}
-          onChange={handleUsernameChange}
-          required
         />
       </FormGroup>
       <FormGroup>
@@ -32,9 +19,6 @@ const LoginForm = ({ onSubmit }) => {
           type="password"
           id="password"
           name="password"
-          value={password}
-          onChange={handlePasswordChange}
-          required
         />
       </FormGroup>
       <SubmitButton type="submit">Iniciar sesión</SubmitButton>

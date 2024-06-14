@@ -45,7 +45,7 @@ const NavBar = () => {
           <NavLink to='/'>Notifications</NavLink>
           <NavLink to='/'>About Us</NavLink>
           <NavLink to='/login'><LoginButton>Login</LoginButton></NavLink>
-          <NavLink to='/create'><LoginButton>Create</LoginButton></NavLink>
+          <NavLink to='/ManageEvents'><LoginButton>Create</LoginButton></NavLink>
           <ToggleButton onClick={toggleTheme}>
             {theme === lightTheme ? 'Modo Nocturno' : 'Modo Diurno'}
           </ToggleButton>
