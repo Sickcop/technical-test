@@ -16,13 +16,6 @@ const lightTheme = {
   cardColor: '#fff',
 };
 
-const darkTheme = {
-  background: '#333',
-  color: '#fff',
-  cardBackground: '#1a1a1a',
-  cardColor: '#fff',
-};
-
 // Estilos globales
 const GlobalStyle = createGlobalStyle`
   body {
@@ -46,7 +39,8 @@ const App = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [theme, setTheme] = useState(lightTheme);
+  const [theme] = useState(lightTheme);
+  const [searchTerm, setSearchTerm] = useState('');
   const eventContainerRef = useRef(null);
   const location = useLocation();
 
@@ -80,9 +74,13 @@ const App = () => {
     }
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
+
+  const filteredEvents = events.filter(event =>
+    event.name.text.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   if (loading) {
     return <div>Loading...</div>;
@@ -97,15 +95,22 @@ const App = () => {
       <GlobalStyle />
       <div className="App">
         <NavBar />
-        <ToggleButton onClick={toggleTheme}>
-          {theme === lightTheme ? 'Modo Nocturno' : 'Modo Diurno'}
-        </ToggleButton>
+        <SearchContainer>
+          <SearchForm>
+            <SearchInput 
+              type="text" 
+              placeholder="Buscar evento..." 
+              value={searchTerm} 
+              onChange={handleSearchChange} 
+            />
+          </SearchForm>
+        </SearchContainer>
         <Routes>
           <Route 
             path='/' 
             element={
               <EventContainer ref={eventContainerRef}>
-                {events.map(event => (
+                {filteredEvents.map(event => (
                   <EventCard 
                     key={event.id}
                     title={event.name?.text ?? "Título no disponible"}
@@ -139,6 +144,24 @@ const EventContainer = styled.div`
   position: relative;
 `;
 
+const SearchContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const SearchForm = styled.form`
+  width: 80%; /* Ancho del formulario */
+`;
+
+const SearchInput = styled.input`
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+`;
+
 const NavButton = styled.button`
   background: transparent;
   border: none;
@@ -158,19 +181,6 @@ const NavButtonLeft = styled(NavButton)`
 
 const NavButtonRight = styled(NavButton)`
   right: 0;
-`;
-
-const ToggleButton = styled.button`
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
 `;
 
 export default App;

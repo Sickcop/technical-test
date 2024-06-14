@@ -44,6 +44,12 @@ const Card = styled.div`
   
   transition: transform 0.3s ease-in-out;
   
+  @media screen and (max-width: 768px) {
+    min-width: 20rem;
+    height: auto;
+    margin: 1rem auto;
+    width: 80%;
+  }
 
   &:hover {
     transform: scale(1.05);
