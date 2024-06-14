@@ -1,3 +1,6 @@
+![] (https://github.com/Sickcop/technical-test/blob/master/Screenshot%202024-06-14%20124533.png)
+
+
 Event Finder App
 
 (Advertencia: recargar la pagina por segunda vez en caso de que el modal no retorne informacion de la api)
