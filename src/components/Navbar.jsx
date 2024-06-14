@@ -1,26 +1,23 @@
-// src/components/NavBar.js
 import React from 'react';
 import styled from 'styled-components';
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom';
 
 const NavBar = () => {
-    return (
-
-      <NavBarContainer>
-        <Logo>Gestion de Eventos</Logo>
-          <NavLinks>
-          <Link to='/'>Home</Link>
-          <Link to='/'>Events</Link>
-          <Link to='/'>Notifications</Link>
-          <Link to='/'>About Us</Link>
-          <Link to='/login'><LoginButton>Login</LoginButton></Link>
-          <Link to='/create'><LoginButton>Create</LoginButton></Link>
-        </NavLinks>
-        <Outlet />
-      </NavBarContainer>
-
-    );
-  };
+  return (
+    <NavBarContainer>
+      <NavLink to='/'><Logo>Gestion de Eventos</Logo></NavLink>
+      <NavLinks>
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/'>Events</NavLink>
+        <NavLink to='/'>Notifications</NavLink>
+        <NavLink to='/'>About Us</NavLink>
+        <NavLink to='/login'><LoginButton>Login</LoginButton></NavLink>
+        <NavLink to='/create'><LoginButton>Create</LoginButton></NavLink>
+      </NavLinks>
+      <Outlet />
+    </NavBarContainer>
+  );
+};
 
 const NavBarContainer = styled.nav`
   width: 100%;
@@ -37,13 +34,22 @@ const NavLinks = styled.div`
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  }
 `;
 
 const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   color: #ff6584;
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: none; /* Quitar subrayado */
+  color: #fff;
+  transition: color 0.3s; /* Transición de color */
+  
+  &:hover {
+    color: #ff6584; /* Cambiar color al pasar el mouse */
+  }
 `;
 
 const LoginButton = styled.button`
@@ -55,6 +61,12 @@ const LoginButton = styled.button`
   cursor: pointer;
   font-size: 1rem;
   margin: 0 auto 0 auto;
+  text-decoration: none; /* Quitar subrayado */
+  outline: none; /* Quitar el contorno al hacer clic */
+  
+  &:hover {
+    filter: brightness(0.9); /* Cambiar brillo al pasar el mouse */
+  }
 `;
 
-  export default NavBar;
+export default NavBar;
