@@ -1,4 +1,4 @@
-![](https://github.com/Sickcop/technical-test/blob/master/Screenshot%202024-06-14%20124533.png)
+![](https://github.com/Sickcop/technical-test/blob/master/screenshots/Screenshot%202024-06-14%20125223.png)
 
 
 Event Finder App
