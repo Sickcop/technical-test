@@ -4,7 +4,7 @@ const EventForm = ({ onSubmit }) => {
 
 
   return (
-    <FormContainer onSubmit={''}>
+    <FormContainer >
       <FormGroup>
         <label htmlFor="title">Título del evento:</label>
         <input
